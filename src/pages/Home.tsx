@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import { InfoCircledIcon } from "@radix-ui/react-icons"
 
@@ -21,6 +22,11 @@ import TemplateSelector from "@/components/template-selector"
 export default function Home() {
   return (
     <div className="space-y-4">
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold mb-2">imgsrc</h1>
+        <p className="text-lg text-muted-foreground">Generate beautiful Open Graph images with zero effort</p>
+      </div>
+
       <TemplateSelector />
 
       <Separator />
@@ -62,9 +68,9 @@ export default function Home() {
                           variant="link"
                           asChild
                         >
-                          <Link href="https://imgsrc.io/guides/open-graph-meta-tags">
+                          <a href="https://imgsrc.io/guides/open-graph-meta-tags" target="_blank" rel="noopener noreferrer">
                             Learn more
-                          </Link>
+                          </a>
                         </Button>{" "}
                         about Open Graph meta tags.
                       </p>
