@@ -1,7 +1,7 @@
+
 "use client"
 
 import { useEffect } from "react"
-import Image from "next/image"
 import { useTemplateStore } from "@/providers/template-store-provider"
 import satori from "satori"
 
@@ -18,7 +18,7 @@ export default function PreviewRenderer() {
     const fonts = getFontsFromTemplate(template.params)
     const fontsResponses = await Promise.all(
       fonts.map((f) =>
-        // Next.js automatically caches fetch requests
+        // Fetch fonts for rendering
         fetch(getFontUrl({ family: f.family, weight: f.weight }))
       )
     )
@@ -69,9 +69,8 @@ export default function PreviewRenderer() {
 
   return (
     <AspectRatio ratio={16 / 9}>
-      <Image
+      <img
         alt="Preview"
-        priority
         className="h-full w-full object-contain"
         width={template.canvas.width}
         height={template.canvas.height}
